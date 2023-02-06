@@ -2,12 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [Unreleased]
 
-- Nothing
+## [2023b] - 2023-02-01
+
+- Update to the CUDA RStudio and Jupyter + RStudio images to include the CUDA toolkit. This is necessary to install certain packages that are compiled in-place.
+- Update to RStudio and VSCode images (standalone versions). They are now fully compatible with the dashboard, so can be used as standard custom images. Idle culling also works with those images.
+- Addition of some packages:
+  - Minimal:
+    - jupyter-server-terminals ~=0.4.4 and jupyter-server ~=2.1.0: this will allow culling to work for terminals once enable on the notebook controller.
+- Updates of some packages versions:
+  - Minimal:
+    - jupyterlab ~=3.5.2 -> ~=3.5.3
+    - jupyter-resource-usage: ~=0.6.4 -> ~=0.7.0
+  - Datascience:
+    - matplotlib ~=3.6.2 -> ~=3.6.3
+    - pandas ~=1.5.2 -> ~=1.5.3
+    - plotly ~=5.11.0 -> ~=5.13.0
+    - scikit-learn ~=1.2.0 -> ~=1.2.1
+    - scipy ~=1.9.3 -> ~=1.10.0
+    - streamlit ~=1.16.0  -> ~=1.17.0
+
+## [2023a] - 2023-01-02
+
+- Migration of repository to opendatahub-io-contrib organization
+- Modification of versioning scheme to allow multiple parallel releases and automated regular updates as described [here](README.md#naming-convention)
+- Full refactoring of the repository for clarity
+- Adding tests to the Makefiles to validate images
+- Release of 2023a, creation of associated support branch
 
 ## [0.0.15] - 2022-12-02
 
@@ -21,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.13] - 2022-10-05
 
 - Monai notebook in the `notebook-controller-images` line. As it's not thoroughly tested it's still not officially released
-- OptaPy custom image updated with OptaPy 8.23.0a0, s2i-minimal-data-science-optapy-notebook:v0.0.2
+- OptaPy custom image updated with OptaPy 8.23.0a0, minimal-data-science-optapy-notebook:v0.0.2
 - All images, including those in the `jupyterhub-images` folder are now compatible with the Kubeflow Notebook Controller
 
 ## [0.0.12] - 2022-08-04
@@ -35,19 +57,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- New notebook image: CUDA 11.6.2 + Monai 0.9.0 + Streamlit 1.10.0 notebook (quay.io/guimou/s2i-monai-notebook:0.0.2)
+- New notebook image: CUDA 11.6.2 + Monai 0.9.0 + Streamlit 1.10.0 notebook (quay.io/guimou/monai-notebook:0.0.2)
 
 ### Modified
 
 - Streamlit image updated to streamlit 1.10.0 - fixes #5
 - fix Streamlit launch scripts for directory context - fixes #6
-- new streamlit image: quay.io/guimou/s2i-generic-data-science-streamlit-notebook:0.0.7
+- new streamlit image: quay.io/guimou/generic-data-science-streamlit-notebook:0.0.7
 
 ## [0.0.10] - 2022-06-22
 
 ### Added
 
-- nbgitpuller added to Streamlit notebook (quay.io/guimou/s2i-generic-data-science-streamlit-notebook:0.0.6)
+- nbgitpuller added to Streamlit notebook (quay.io/guimou/generic-data-science-streamlit-notebook:0.0.6)
 
 ### Modified
 
@@ -58,14 +80,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Streamlit notebook (quay.io/guimou/s2i-generic-data-science-streamlit-notebook:0.0.5)
+- Streamlit notebook (quay.io/guimou/generic-data-science-streamlit-notebook:0.0.5)
 
 ## [0.0.8] - 2022-03-28
 
 ### Added
 
 - Changelog file
-- SageMath notebook (quay.io/guimou/s2i-minimal-data-science-sagemath-notebook:0.0.1)
+- SageMath notebook (quay.io/guimou/minimal-data-science-sagemath-notebook:0.0.1)
 
 ## [0.0.7] - 2022-03-25
 
@@ -77,4 +99,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- OptaPy notebook added (quay.io/guimou/s2i-minimal-data-science-optapy-notebook:v0.0.1)
+- OptaPy notebook added (quay.io/guimou/minimal-data-science-optapy-notebook:v0.0.1)
